@@ -1,3 +1,80 @@
-<p>
-  create-employee works!
-</p>
+<form #employeeForm="ngForm" (ngSubmit)='ClickSaveSubmit(employeeForm)'>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Create Employee</h3>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input id="fullName" name="fullName" [(ngModel)]='fullName' type="text" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id="email" name="email" [(ngModel)]='email' type="email" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="phone">Contact Number</label>
+        <input id="phone" name="phone" [(ngModel)]='phone' type="text" class="form-control" />
+      </div>
+
+      <div class="form-group">
+        <label>Contact Preference</label>
+
+        <div class="radio">
+          <label>
+            <input [(ngModel)]='ContactPref' type="radio" name="ContactPref" id="input${1/(\w+)/\u\1/g}" value="Email" checked="checked"> Email
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" [(ngModel)]='ContactPref' name="ContactPref" id="input${1/(\w+)/\u\1/g}" value="Phone" checked="checked"> Phone
+          </label>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label>Gender</label>
+
+        <div class="radio">
+          <label>
+            <input [(ngModel)]='Gender' type="radio" name="Gender" id="input${1/(\w+)/\u\1/g}" value="Male" checked="checked"> Male
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" [(ngModel)]='Gender' name="Gender" id="input${1/(\w+)/\u\1/g}" value="Female" checked="checked"> Female
+          </label>
+        </div>
+
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input name="isActive" [(ngModel)]='isActive' type="checkbox" value=""> Is Active
+        </label>
+
+      </div>
+      <div class="form-group">
+        <label>Deparment</label>
+        <select name="Deparment" [(ngModel)]='Deparment' id="input${1/(\w+)/\u\1/g}" class="form-control" required="required">
+          <!-- <option value="0">Select Department</option>
+          <option value="1">HR</option>
+          <option value="2">IT</option>
+          <option value="3">Finance</option> -->
+
+          <option *ngFor="let dept of departmentsArray" [value]="dept.id">
+            {{dept.name}}
+
+          </option>
+        </select>
+      </div>
+
+
+    </div>
+    <div class="panel-footer">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </div>
+</form>
+Angular generated form model:- {{employeeForm.value | json }}
