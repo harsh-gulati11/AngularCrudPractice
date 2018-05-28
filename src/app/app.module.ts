@@ -6,6 +6,7 @@ import { ListEmployeesComponent } from './employees/list-employees.component';
 import { CreateEmployeeComponent } from './employees/create-employee.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 const appRoutes: Routes = [
   { path: 'list', component: ListEmployeesComponent },
   { path: 'create', component: CreateEmployeeComponent },
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
     // tslint:disable-next-line:whitespace
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+    BsDatepickerModule.forRoot(),
     FormsModule
 
   ],

@@ -30,7 +30,7 @@ export class ListEmployeesComponent implements OnInit {
     dateOfBirth: new Date('01/12/1987'),
     department: 'Ministry',
     isActive: true,
-    photoPath: 'assets/images/harsh.jpg'
+    photoPath: 'assets/images/komal.jpg'
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ export class ListEmployeesComponent implements OnInit {
     dateOfBirth: new Date('05/08/2017'),
     department: 'sweetheart',
     isActive: false,
-    photoPath: 'assets/images/harsh.jpg'
+    photoPath: 'assets/images/vansh.jpg'
   }
   ];
 
